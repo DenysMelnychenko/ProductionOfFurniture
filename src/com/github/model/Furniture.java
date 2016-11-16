@@ -2,16 +2,16 @@ package com.github.model;
 
 public class Furniture {
 
-    private static int counter = 0;
-    private int idCounter = 0;
-    private int id = 0;
+
+    private int id = -1;
     private String typeOfProduct;
     private String typeOfMaterial;
 
-    public Furniture(String name) {
-        this.id = +idCounter;
-        typeOfProduct = name;
-        counter++;
+    public Furniture(String productName, String productType) {
+
+        typeOfProduct = productName;
+        typeOfMaterial = productType;
+        this.id = id++;
     }
 
     public Furniture() {
@@ -39,6 +39,10 @@ public class Furniture {
 
     public void setTypeOfMaterial(String typeOfMaterial) {
         this.typeOfProduct = typeOfMaterial;
+    }
+
+    public String toString() {
+        return String.format("%s", this.getTypeOfProduct());
     }
 
 

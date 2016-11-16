@@ -1,10 +1,8 @@
 package com.github.views;
 
-import com.github.model.Chair;
-import com.github.model.Table;
-import com.github.model.Wordrobe;
+import com.github.storage.*;
 import com.github.controller.Command;
-import com.github.model.Order;
+
 
 /**
  * Created by aspir on 12.11.2016.
@@ -12,10 +10,10 @@ import com.github.model.Order;
 public class Menu {
 
     private Command command = new Command();
-    private Order order = null;
+    private MemoryStorage list = new MemoryStorage();
 
     public Command getCommand() {
-        return command;
+        return this.command;
     }
 
     public void setCommand(Command command) {
@@ -34,7 +32,7 @@ public class Menu {
 
     public void showAddMenu() {
         System.out.println("Chose added product");
-        System.out.println("|1 - table|   |2 - chair|   |3 - wardrobe|  |4 - return|");
+        System.out.println("|1 - Furniture| |2 - return|");
     }
 
     public void showEditMenu() {
@@ -46,7 +44,7 @@ public class Menu {
     public void chooseFromMainMenu(String choice) {
         switch (choice) {
             case "add":
-                order = new Order();
+               /* list.add();*/
                 while (!command.getCommandName().equals("return")) {
                     showAddMenu();
                     chooseFromAddMenu(command.nextUserCommand());
@@ -54,7 +52,7 @@ public class Menu {
                 break;
             case "print":
                 System.out.println("Added Product to Order: ");
-                order.printOrder();
+                list.print();
                 break;
             case "edit":
                 while (!command.getCommandName().equals("return")) {
@@ -80,7 +78,7 @@ public class Menu {
                 idNumber = Integer.parseInt(command.nextUserCommand());
                 System.out.println("type new name of the product");
                 newName = command.nextUserCommand();
-                order.changeName(idNumber,newName );
+                list.changeName(idNumber, newName);
                 System.out.println("Name changed");
                 break;
             case "2":
@@ -96,21 +94,10 @@ public class Menu {
 
         switch (choice) {
             case "1":
-                order.add(new Table("Test Table"));
-                System.out.println("Table added ID = " );
-                System.out.println();
+                list.add();
+                System.out.println("Furniture added");
                 break;
             case "2":
-                order.add(new Chair("Test Chair"));
-                System.out.println("Chair added");
-                System.out.println();
-                break;
-            case "3":
-                order.add(new Wordrobe("Test Wardrobe"));
-                System.out.println("Wardrobe added");
-                System.out.println();
-                break;
-            case "4":
                 command.setCommandName("return");
                 break;
             default:
@@ -118,7 +105,6 @@ public class Menu {
                 break;
         }
     }
-
 
 
 }
