@@ -6,9 +6,8 @@ import java.util.ArrayList;
 
 /**
  * Created by aspir on 08.11.2016.
- *
  */
-public class  MemoryStorage {
+public class MemoryStorage {
     ArrayList<Furniture> holder = new ArrayList<>();
 
     public void add() {
@@ -49,5 +48,13 @@ public class  MemoryStorage {
 
         oldName.setTypeOfProduct(newName);
 
+    }
+
+    public void deleteById(int id) {
+        for (Furniture furniture : holder) {
+            if (furniture.getId() == id) {
+                holder.remove(id);
+            }
+        }
     }
 }
