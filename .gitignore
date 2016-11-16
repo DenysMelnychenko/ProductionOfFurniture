@@ -1,0 +1,8 @@
+
+# Output
+out/*
+
+# Intelij
+*.iml
+.idea/
+*.iml
