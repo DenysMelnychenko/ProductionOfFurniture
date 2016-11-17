@@ -1,8 +1,9 @@
 
 # Output
 out/*
+bin/*
 
 # Intelij
 *.iml
-.idea/
+.idea/*
 *.iml
