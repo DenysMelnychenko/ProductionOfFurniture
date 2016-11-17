@@ -36,8 +36,7 @@ public class MemoryStorage {
     }
 
     public void print() {
-        for (Furniture furniture : holder
-                ) {
+        for (Furniture furniture : holder) {
             System.out.println(furniture.toString());
         }
     }

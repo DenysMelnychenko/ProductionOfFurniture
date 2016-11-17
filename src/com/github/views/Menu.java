@@ -53,6 +53,7 @@ public class Menu {
             case "print":
                 System.out.println("Added Product to Order: ");
                 list.print();
+                System.out.println();
                 break;
             case "edit":
                 while (!command.getCommandName().equals("return")) {
@@ -96,12 +97,15 @@ public class Menu {
             case "1":
                 list.add();
                 System.out.println("Furniture added");
+                System.out.println();
                 break;
             case "2":
                 command.setCommandName("return");
+                System.out.println();
                 break;
             default:
                 System.out.println("Please retry");
+                System.out.println();
                 break;
         }
     }
