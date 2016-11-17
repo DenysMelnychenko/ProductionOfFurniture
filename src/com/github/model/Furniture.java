@@ -7,7 +7,7 @@ public class Furniture {
     private String typeOfProduct;
     private String typeOfMaterial;
 
-    public Furniture(String productName, String productType) {
+    public Furniture(String productName, String productType, int id) {
 
         typeOfProduct = productName;
         typeOfMaterial = productType;

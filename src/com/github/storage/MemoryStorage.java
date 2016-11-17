@@ -3,19 +3,19 @@ package com.github.storage;
 import com.github.model.Furniture;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by aspir on 08.11.2016.
  */
 public class MemoryStorage {
-    ArrayList<Furniture> holder = new ArrayList<>();
+    private ArrayList<Furniture> holder = new ArrayList<>();
 
-    public void add() {
-        Furniture furniture = new Furniture("Furniture", "Wood");
+    public void add(Furniture furniture) {
         holder.add(furniture);
     }
 
-    public Furniture read(int id) {   // getAll - всю коллекцию
+    public Furniture getById(int id) {
         Furniture result = null;
         for (Furniture furniture : holder) {
             if (furniture.getId() == id) {
@@ -25,20 +25,19 @@ public class MemoryStorage {
         return result;
     }
 
-    public Furniture read(String name) {
+    public Furniture getByName(String name) {
         Furniture result = null;
         for (Furniture furniture : holder) {
-            if (furniture.getTypeOfProduct() == name) {
+            if (furniture.getTypeOfProduct().equals(name)) {
                 result = furniture;
             }
         }
         return result;
     }
 
-    public void print() {
-        for (Furniture furniture : holder) {
-            System.out.println(furniture.toString());
-        }
+    public ArrayList<Furniture> getAll() {
+        return new ArrayList<Furniture>(holder);
+
     }
 
     public void changeName(int id, String newName) {

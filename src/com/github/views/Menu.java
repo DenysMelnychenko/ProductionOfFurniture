@@ -1,7 +1,10 @@
 package com.github.views;
 
+import com.github.model.Furniture;
 import com.github.storage.*;
 import com.github.controller.Command;
+
+import java.util.ArrayList;
 
 
 /**
@@ -10,7 +13,7 @@ import com.github.controller.Command;
 public class Menu {
 
     private Command command = new Command();
-    private MemoryStorage list = new MemoryStorage();
+    private MemoryStorage dao = new MemoryStorage();
 
     public Command getCommand() {
         return this.command;
@@ -44,7 +47,7 @@ public class Menu {
     public void chooseFromMainMenu(String choice) {
         switch (choice) {
             case "add":
-               /* list.add();*/
+               /* dao.add();*/
                 while (!command.getCommandName().equals("return")) {
                     showAddMenu();
                     chooseFromAddMenu(command.nextUserCommand());
@@ -52,8 +55,12 @@ public class Menu {
                 break;
             case "print":
                 System.out.println("Added Product to Order: ");
-                list.print();
-                System.out.println();
+                System.out.println("------------------------");
+                ArrayList<Furniture> list = dao.getAll();
+                for (Furniture furniture : list) {
+                    System.out.println(furniture.getTypeOfProduct());
+                }
+                System.out.println("------------------------");
                 break;
             case "edit":
                 while (!command.getCommandName().equals("return")) {
@@ -79,7 +86,7 @@ public class Menu {
                 idNumber = Integer.parseInt(command.nextUserCommand());
                 System.out.println("type new name of the product");
                 newName = command.nextUserCommand();
-                list.changeName(idNumber, newName);
+                dao.changeName(idNumber, newName);
                 System.out.println("Name changed");
                 break;
             case "2":
@@ -95,7 +102,14 @@ public class Menu {
 
         switch (choice) {
             case "1":
-                list.add();
+                System.out.println("Add furniture type");
+                String type = command.nextUserCommand();
+                System.out.println("Add furniture material");
+                String material = command.nextUserCommand();
+                System.out.println("Add furniture id");
+                int furniture_id = Integer.parseInt(command.nextUserCommand());
+                Furniture furniture = new Furniture(type, material, furniture_id);
+                dao.add(furniture);
                 System.out.println("Furniture added");
                 System.out.println();
                 break;
