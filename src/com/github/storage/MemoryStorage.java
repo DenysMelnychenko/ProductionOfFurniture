@@ -1,15 +1,12 @@
 package com.github.storage;
 
 import com.github.model.Furniture;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-/**
- * Created by aspir on 08.11.2016.
- */
 public class MemoryStorage {
-    private ArrayList<Furniture> holder = new ArrayList<>();
+
+    private List<Furniture> holder = new ArrayList<>();
 
     public void add(Furniture furniture) {
         holder.add(furniture);
@@ -35,23 +32,25 @@ public class MemoryStorage {
         return result;
     }
 
-    public ArrayList<Furniture> getAll() {
-        return new ArrayList<Furniture>(holder);
+    public List<Furniture> getAll() {
 
+        return this.holder;
     }
 
-    public void changeName(int id, String newName) {
+    public void changeTypeById(int id, String newName) {
 
-        Furniture oldName = holder.get(id);
-
-        oldName.setTypeOfProduct(newName);
-
+        for (Furniture fur : holder) {
+            if (fur.getId() == id) {
+                fur.setTypeOfMaterial(newName);
+            }
+        }
     }
 
     public void deleteById(int id) {
+
         for (Furniture furniture : holder) {
             if (furniture.getId() == id) {
-                holder.remove(id);
+                holder.remove(furniture);
             }
         }
     }

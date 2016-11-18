@@ -4,25 +4,12 @@ import com.github.model.Furniture;
 import com.github.storage.*;
 import com.github.controller.Command;
 
-import java.util.ArrayList;
+import java.util.List;
 
-
-/**
- * Created by aspir on 12.11.2016.
- */
 public class Menu {
 
     private Command command = new Command();
     private MemoryStorage dao = new MemoryStorage();
-
-    public Command getCommand() {
-        return this.command;
-    }
-
-    public void setCommand(Command command) {
-        this.command = command;
-    }
-
 
     public void showMainMenu() {
         System.out.println("Commands:");
@@ -30,15 +17,14 @@ public class Menu {
         System.out.println("|edit| - edit products in Order");
         System.out.println("|print|	- print Order to display");
         System.out.println("|exit| - exit program");
-
     }
 
-    public void showAddMenu() {
+    private void showAddMenu() {
         System.out.println("Chose added product");
         System.out.println("|1 - Furniture| |2 - return|");
     }
 
-    public void showEditMenu() {
+    private void showEditMenu() {
         System.out.println("|1 - change name of product|");
         System.out.println("|2 - return|");
     }
@@ -47,7 +33,6 @@ public class Menu {
     public void chooseFromMainMenu(String choice) {
         switch (choice) {
             case "add":
-               /* dao.add();*/
                 while (!command.getCommandName().equals("return")) {
                     showAddMenu();
                     chooseFromAddMenu(command.nextUserCommand());
@@ -56,9 +41,12 @@ public class Menu {
             case "print":
                 System.out.println("Added Product to Order: ");
                 System.out.println("------------------------");
-                ArrayList<Furniture> list = dao.getAll();
+                List<Furniture> list = dao.getAll();
                 for (Furniture furniture : list) {
                     System.out.println(furniture.getTypeOfProduct());
+                }
+                if (list.size() == 0) {
+                    System.out.println("No products were found");
                 }
                 System.out.println("------------------------");
                 break;
@@ -84,9 +72,11 @@ public class Menu {
                 String newName;
                 System.out.println("choose id of the product");
                 idNumber = Integer.parseInt(command.nextUserCommand());
+
                 System.out.println("type new name of the product");
                 newName = command.nextUserCommand();
-                dao.changeName(idNumber, newName);
+
+                dao.changeTypeById(idNumber, newName);
                 System.out.println("Name changed");
                 break;
             case "2":
@@ -98,16 +88,18 @@ public class Menu {
         }
     }
 
-    public void chooseFromAddMenu(String choice) {
-
+    private void chooseFromAddMenu(String choice) {
         switch (choice) {
             case "1":
-                System.out.println("Add furniture type");
+                System.out.println("Add furniture type. Example: Table");
                 String type = command.nextUserCommand();
-                System.out.println("Add furniture material");
+
+                System.out.println("Add furniture material Example: Wood");
                 String material = command.nextUserCommand();
-                System.out.println("Add furniture id");
+
+                System.out.println("Add furniture id Example: 123");
                 int furniture_id = Integer.parseInt(command.nextUserCommand());
+
                 Furniture furniture = new Furniture(type, material, furniture_id);
                 dao.add(furniture);
                 System.out.println("Furniture added");
@@ -124,5 +116,12 @@ public class Menu {
         }
     }
 
+    public Command getCommand() {
+        return this.command;
+    }
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
 
 }

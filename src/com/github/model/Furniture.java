@@ -2,8 +2,7 @@ package com.github.model;
 
 public class Furniture {
 
-
-    private int id = -1;
+    private int id ;
     private String typeOfProduct;
     private String typeOfMaterial;
 
@@ -11,10 +10,7 @@ public class Furniture {
 
         typeOfProduct = productName;
         typeOfMaterial = productType;
-        this.id = id++;
-    }
-
-    public Furniture() {
+        this.id = id;
     }
 
     public int getId() {
@@ -44,6 +40,4 @@ public class Furniture {
     public String toString() {
         return String.format("%s", this.getTypeOfProduct());
     }
-
-
 }

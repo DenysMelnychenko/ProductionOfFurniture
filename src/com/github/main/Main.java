@@ -1,6 +1,5 @@
 package com.github.main;
 
-
 import com.github.views.Menu;
 
 public class Main {
@@ -12,7 +11,6 @@ public class Main {
         while (!menu.getCommand().getCommandName().equals("exit")) {
             menu.showMainMenu();
             menu.chooseFromMainMenu(menu.getCommand().nextUserCommand());
-
         }
     }
 }
