@@ -2,14 +2,14 @@ package com.github.views;
 
 import com.github.model.Furniture;
 import com.github.storage.*;
-import com.github.controller.Command;
+import com.github.controller.Input;
 
 import java.util.List;
 
 public class Menu {
 
-    private Command command = new Command();
-    private MemoryStorage dao = new MemoryStorage();
+   /* private Input input = new Input();
+    private MemoryStorage dao = new MemoryStorage();*/
 
     public void showMainMenu() {
         System.out.println("Commands:");
@@ -30,12 +30,12 @@ public class Menu {
     }
 
 
-    public void chooseFromMainMenu(String choice) {
+    /*public void chooseFromMainMenu(String choice) {
         switch (choice) {
             case "add":
-                while (!command.getCommandName().equals("return")) {
+                while (!input.getInputName().equals("return")) {
                     showAddMenu();
-                    chooseFromAddMenu(command.nextUserCommand());
+                    chooseFromAddMenu(input.nextUserComand());
                 }
                 break;
             case "print":
@@ -51,14 +51,14 @@ public class Menu {
                 System.out.println("------------------------");
                 break;
             case "edit":
-                while (!command.getCommandName().equals("return")) {
+                while (!input.getInputName().equals("return")) {
                     showEditMenu();
-                    chooseFromEditMenu(command.nextUserCommand());
+                    chooseFromEditMenu(input.nextUserComand());
                 }
                 break;
             case "exit":
                 System.out.println("Program shutdown");
-                command.setCommandName("exit");
+                input.setInputName("exit");
                 break;
             default:
                 System.out.println("Please retry");
@@ -71,16 +71,16 @@ public class Menu {
                 int idNumber;
                 String newName;
                 System.out.println("choose id of the product");
-                idNumber = Integer.parseInt(command.nextUserCommand());
+                idNumber = Integer.parseInt(input.nextUserComand());
 
                 System.out.println("type new name of the product");
-                newName = command.nextUserCommand();
+                newName = input.nextUserComand();
 
                 dao.changeTypeById(idNumber, newName);
                 System.out.println("Name changed");
                 break;
             case "2":
-                command.setCommandName("return");
+                input.setInputName("return");
                 break;
             default:
                 System.out.println("Please retry");
@@ -92,13 +92,13 @@ public class Menu {
         switch (choice) {
             case "1":
                 System.out.println("Add furniture type. Example: Table");
-                String type = command.nextUserCommand();
+                String type = input.nextUserComand();
 
                 System.out.println("Add furniture material Example: Wood");
-                String material = command.nextUserCommand();
+                String material = input.nextUserComand();
 
                 System.out.println("Add furniture id Example: 123");
-                int furniture_id = Integer.parseInt(command.nextUserCommand());
+                int furniture_id = Integer.parseInt(input.nextUserComand());
 
                 Furniture furniture = new Furniture(type, material, furniture_id);
                 dao.add(furniture);
@@ -106,7 +106,7 @@ public class Menu {
                 System.out.println();
                 break;
             case "2":
-                command.setCommandName("return");
+                input.setInputName("return");
                 System.out.println();
                 break;
             default:
@@ -116,12 +116,12 @@ public class Menu {
         }
     }
 
-    public Command getCommand() {
-        return this.command;
+    public Input getInput() {
+        return this.input;
     }
 
-    public void setCommand(Command command) {
-        this.command = command;
+    public void setInput(Input input) {
+        this.input = input;
     }
-
+*/
 }

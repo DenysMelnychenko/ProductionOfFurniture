@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class MemoryStorage {
 
-    private List<Furniture> holder = new ArrayList<>();
+    private static List<Furniture> holder = new ArrayList<>();
 
-    public void add(Furniture furniture) {
+    public static void add(Furniture furniture) {
         holder.add(furniture);
     }
 
@@ -22,7 +22,7 @@ public class MemoryStorage {
         return result;
     }
 
-    public Furniture getByName(String name) {
+    public static Furniture getByName(String name) {
         Furniture result = null;
         for (Furniture furniture : holder) {
             if (furniture.getTypeOfProduct().equals(name)) {
@@ -32,12 +32,12 @@ public class MemoryStorage {
         return result;
     }
 
-    public List<Furniture> getAll() {
+    public static List<Furniture> getAll() {
 
-        return this.holder;
+        return holder;
     }
 
-    public void changeTypeById(int id, String newName) {
+    public static void changeTypeById(int id, String newName) {
 
         for (Furniture fur : holder) {
             if (fur.getId() == id) {
@@ -46,7 +46,7 @@ public class MemoryStorage {
         }
     }
 
-    public void deleteById(int id) {
+    public static void deleteById(int id) {
 
         for (Furniture furniture : holder) {
             if (furniture.getId() == id) {
