@@ -38,6 +38,6 @@ public class Furniture {
     }
 
     public String toString() {
-        return String.format("%s", this.getTypeOfProduct());
+        return String.format("%s", this.getId(),  this.getTypeOfProduct(), this.getTypeOfMaterial());
     }
 }

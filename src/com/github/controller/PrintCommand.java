@@ -12,7 +12,8 @@ public class PrintCommand extends Command {
         System.out.println("------------------------");
         List<Furniture> list = MemoryStorage.getAll();
         for (Furniture furniture : list) {
-            System.out.println(furniture.getTypeOfProduct());
+            System.out.println("| ID" + "| NAME" + "| MATERIAL" + " |");
+            System.out.println("| " + furniture.getId() + "| " + furniture.getTypeOfProduct() + "| " + furniture.getTypeOfMaterial() + "|");
         }
         if (list.size() == 0) {
             System.out.println("No products were found");

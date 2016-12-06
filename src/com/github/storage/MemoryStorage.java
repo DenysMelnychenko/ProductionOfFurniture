@@ -41,6 +41,15 @@ public class MemoryStorage {
 
         for (Furniture fur : holder) {
             if (fur.getId() == id) {
+                fur.setTypeOfProduct(newName);
+            }
+        }
+    }
+
+    public static void changeMaterialById(int id, String newName) {
+
+        for (Furniture fur : holder) {
+            if (fur.getId() == id) {
                 fur.setTypeOfMaterial(newName);
             }
         }
