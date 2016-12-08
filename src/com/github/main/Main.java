@@ -20,7 +20,7 @@ public class Main {
             Command cmd = commandHolder.get(input.getInputName());
 
             cmd.execute();
-
+            System.out.println("=== Good Buy ===");
         }
 
 

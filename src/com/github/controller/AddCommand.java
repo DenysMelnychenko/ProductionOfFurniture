@@ -25,8 +25,7 @@ public class AddCommand extends Command {
 
                     Furniture furniture = new Furniture(type, material, furniture_id);
                     MemoryStorage.add(furniture);
-                    System.out.println("Furniture added");
-                    System.out.println();
+                    System.out.println("Furniture added" + "\n");
                     break;
 
                 case "2":

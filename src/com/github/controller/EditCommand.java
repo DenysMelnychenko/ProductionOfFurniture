@@ -10,6 +10,7 @@ public class EditCommand extends Command {       // Здесь создать sw
 
     public void execute() {
         Input input = new Input();
+        PrintCommand printProd = new PrintCommand();
         while (!input.getInputName().equals("return")) {
             if (MemoryStorage.getAll().size() == 0){
                 System.out.println("------------------------");
@@ -23,6 +24,7 @@ public class EditCommand extends Command {       // Здесь создать sw
             String choice = input.getInputName();
             switch (choice) {
                 case "1":
+                    printProd.execute();
                     System.out.println("choose id of the product");
                     idNumber = Integer.parseInt(input.nextUserComand());
 
@@ -35,6 +37,7 @@ public class EditCommand extends Command {       // Здесь создать sw
                     break;
 
                 case "2":
+                    printProd.execute();
                     System.out.println("choose id of the product");
                     idNumber = Integer.parseInt(input.nextUserComand());
 

@@ -34,7 +34,7 @@ public class Furniture {
     }
 
     public void setTypeOfMaterial(String typeOfMaterial) {
-        this.typeOfProduct = typeOfMaterial;
+        this.typeOfMaterial = typeOfMaterial;
     }
 
     public String toString() {
