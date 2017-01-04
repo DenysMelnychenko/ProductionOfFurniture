@@ -15,7 +15,7 @@ public class Input {
         this.commandName = commandName;
     }
 
-    public String nextUserComand() {
+    public String nextUserCommand() {
         return this.commandName = scan.nextLine();
     }
 }

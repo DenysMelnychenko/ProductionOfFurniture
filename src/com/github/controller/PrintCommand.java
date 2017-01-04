@@ -5,8 +5,9 @@ import com.github.storage.MemoryStorage;
 
 import java.util.List;
 
-public class PrintCommand extends Command {
+public class PrintCommand implements Command {
 
+    @Override
     public void execute() {
         System.out.println("Added Product to Order: ");
         System.out.println("------------------------");
@@ -19,5 +20,10 @@ public class PrintCommand extends Command {
             System.out.println("| " + furniture.getId() + "| " + furniture.getTypeOfProduct() + "| " + furniture.getTypeOfMaterial() + "|");
         }
         System.out.println("------------------------");
+    }
+
+    @Override
+    public void execute(Input input) {
+
     }
 }

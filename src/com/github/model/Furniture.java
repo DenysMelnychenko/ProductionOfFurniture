@@ -2,15 +2,15 @@ package com.github.model;
 
 public class Furniture {
 
-    private int id ;
+    private int id;
     private String typeOfProduct;
     private String typeOfMaterial;
 
-    public Furniture(String productName, String productType, int id) {
+    public Furniture(String productType, String productMaterial) {
 
-        typeOfProduct = productName;
-        typeOfMaterial = productType;
-        this.id = id;
+        typeOfProduct = productType;
+        typeOfMaterial = productMaterial;
+        this.id = id++;
     }
 
     public int getId() {
@@ -38,6 +38,6 @@ public class Furniture {
     }
 
     public String toString() {
-        return String.format("%s", this.getId(),  this.getTypeOfProduct(), this.getTypeOfMaterial());
+        return String.format("%s", this.getId(), this.getTypeOfProduct(), this.getTypeOfMaterial());
     }
 }

@@ -12,17 +12,17 @@ public class Main {
         CommandHolder commandHolder = new CommandHolder();
 
 
-        while(!input.getInputName().equals("exit")){
+        while (!input.getInputName().equals("exit")) {
 
             Menu.showMainMenu();
-            input.nextUserComand();
+            input.nextUserCommand();
 
             Command cmd = commandHolder.get(input.getInputName());
 
             cmd.execute();
-            System.out.println("=== Good Buy ===");
-        }
 
+        }
+        System.out.println("=== Good Buy ===");
 
 
     }

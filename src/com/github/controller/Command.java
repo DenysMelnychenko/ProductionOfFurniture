@@ -1,11 +1,9 @@
 package com.github.controller;
 
-public class Command {
+public interface Command {
 
-    public void execute() {
-    }
+    void execute();
 
-    public void execute(Input input) {
-    }
+    void execute(Input input);
 }
 
