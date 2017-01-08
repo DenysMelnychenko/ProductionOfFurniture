@@ -8,33 +8,33 @@ import com.github.storage.MemoryStorage;
 
 public class AddChairCommand implements Command {
 
-    @Override
-    public void execute() {
-        Input input = new Input();
+	@Override
+	public void execute() {
+		Input input = new Input();
 
-        System.out.println("Add furniture type. Example: Table");
-        String type = input.nextUserCommand();
+		System.out.println("Add specification name. Example: My Chair");
+		String type = input.nextUserCommand();
 
-        System.out.println("Add furniture material. Example: Wood");
-        String material = input.nextUserCommand();
+		System.out.println("Add Chair material. Example: Wood");
+		String material = input.nextUserCommand();
 
-        System.out.printf("Add height of Legs. Example: 65");
-        int height = Integer.parseInt(input.nextUserCommand());
+		System.out.println("Add height of Legs. Example: 65");
+		int height = Integer.parseInt(input.nextUserCommand());
 
-        System.out.println("Add type of Cover. Example: Leather");
-        String cover = input.nextUserCommand();
+		System.out.println("Add type of Cover. Example: Leather");
+		String cover = input.nextUserCommand();
 
-        System.out.printf("Add backrest. Example: true");
-        boolean backrest = Boolean.parseBoolean(input.nextUserCommand());
+		System.out.println("Add backrest. Example: true");
+		boolean backrest = Boolean.parseBoolean(input.nextUserCommand());
 
-        Furniture furniture = new Chair(type, material, height, cover, backrest);
-        MemoryStorage.add(furniture);
-        System.out.println("Furniture added" + "\n");
-    }
+		Furniture furniture = new Chair(type, material, height, cover, backrest);
+		MemoryStorage.add(furniture);
+		System.out.println("Chair added" + "\n");
+	}
 
-    @Override
-    public void execute(Input input) {
+	@Override
+	public void execute(Input input) {
 
-    }
+	}
 
 }

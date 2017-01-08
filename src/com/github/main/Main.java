@@ -14,7 +14,7 @@ public class Main {
 
         while (!input.getInputName().equals("exit")) {
 
-            Menu.showMainMenu();
+			Menu.showMainMenu();
             input.nextUserCommand();
 
             Command cmd = commandHolder.get(input.getInputName());

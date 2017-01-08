@@ -2,47 +2,51 @@ package com.github.model;
 
 public class Countertop {
 
-    private int width;
-    private int length;
-    private int height;
-    private String typeOfCountertop;
+	private int width;
+	private int length;
+	private int height;
+	private String typeOfCountertop;
 
-    public Countertop(String typeOfCountertop, int width, int length, int height) {
-        this.typeOfCountertop = typeOfCountertop;
-        this.width = width;
-        this.length = length;
-        this.height = height;
-    }
+	public Countertop(String typeOfCountertop, int width, int length, int height) {
+		this.typeOfCountertop = typeOfCountertop;
+		this.width = width;
+		this.length = length;
+		this.height = height;
+	}
 
-    public int getWidth() {
-        return width;
-    }
+	public Countertop() {
 
-    public int getLength() {
-        return length;
-    }
+	}
 
-    public int getHeight() {
-        return height;
-    }
+	public int getWidth() {
+		return width;
+	}
 
-    public String getTypeOfCountertop() {
-        return typeOfCountertop;
-    }
+	public int getLength() {
+		return length;
+	}
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
+	public int getHeight() {
+		return height;
+	}
 
-    public void setLength(int length) {
-        this.length = length;
-    }
+	public String getTypeOfCountertop() {
+		return typeOfCountertop;
+	}
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
+	public void setWidth(int width) {
+		this.width = width;
+	}
 
-    public void setTypeOfCountertop(String typeOfCountertop) {
-        this.typeOfCountertop = typeOfCountertop;
-    }
+	public void setLength(int length) {
+		this.length = length;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public void setTypeOfCountertop(String typeOfCountertop) {
+		this.typeOfCountertop = typeOfCountertop;
+	}
 }
