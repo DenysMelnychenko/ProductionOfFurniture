@@ -44,7 +44,7 @@ public class AddTableCommand implements Command {
 		Furniture table = new Table(type, material, numOfPersons, numOfLegs, heightOfLegs, top);
 
 		MemoryStorage.add(table);
-		System.out.println("Furniture added" + "\n");
+		System.out.println("Table added" + "\n");
 	}
 
 	@Override
