@@ -46,11 +46,11 @@ public class MemoryStorage {
         }
     }
 
-    public static void changeMaterialById(int id, String newName) {
+    public static void changeMaterialById(int id, String newMaterial) {
 
         for (Furniture fur : holder) {
             if (fur.getId() == id) {
-                fur.setTypeOfMaterial(newName);
+                fur.setTypeOfMaterial(newMaterial);
             }
         }
     }

@@ -11,12 +11,13 @@ public class Main {
 
 		Input input = new Input();
 		CommandsHolder comHolder = new CommandsHolder();
+		
 		while (!input.getInputName().equals("exit")) {
 			Menu.showMainMenu();
 			input.nextUserCommand();
 			Map<String, Command> typeOfCommandHolder = comHolder.getAll(input.getInputName());
-			String menuResult = Menu.showMenu(typeOfCommandHolder);
-			if (menuResult.equals("typical")) {
+			String result = Menu.showMenu(typeOfCommandHolder);
+			if (result.equals("typical")) {
 				Command cmd = typeOfCommandHolder.get(input.getInputName());
 				cmd.execute();
 			} else {

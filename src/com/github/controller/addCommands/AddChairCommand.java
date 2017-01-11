@@ -29,7 +29,7 @@ public class AddChairCommand implements Command {
 
 		Furniture furniture = new Chair(type, material, height, cover, backrest);
 		MemoryStorage.add(furniture);
-		System.out.println("Chair added" + "\n");
+		System.out.println("Chair added" + "\n" + "------------------------");
 	}
 
 	@Override

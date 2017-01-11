@@ -19,8 +19,9 @@ public class EditCommandsHolder {
 	public EditCommandsHolder() {
 		command2Action.put("edit", editCmd);
 		command2Action.put("name", editNameCmd);
+		command2Action.put("material", editMaterCmd);
 		command2Action.put("print", printCmd);
-		command2Action.put("return", returnCmd);
+		command2Action.put("3", returnCmd);
 		command2Action.put("exit", exitCmd);
 	}
 
