@@ -1,5 +1,11 @@
 package com.github.views;
 
+import java.util.Map;
+
+import com.github.controller.Command;
+import com.github.storage.AddCommandsHolder;
+import com.github.storage.EditCommandsHolder;
+
 public class Menu {
 
 
@@ -22,4 +28,16 @@ public class Menu {
         /*System.out.println("|4 - change id of product|");*/       // Нужно ли иметь возможность изменять id?
         System.out.println("|3 - return|");
     }
+
+	public static String showMenu(Map<String, Command> map) {
+		if (map.entrySet().equals(new AddCommandsHolder().getAll().entrySet())) {
+			Menu.showAddMenu();
+			return "";
+		} else if (map.entrySet().equals(new EditCommandsHolder().getAll().entrySet())) {
+			Menu.showEditMenu();
+		return "";
+		}
+		  else {return "typical";
+		  } 
+	}
 }

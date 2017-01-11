@@ -12,7 +12,7 @@ public class MemoryStorage {
         holder.add(furniture);
     }
 
-    public Furniture getById(int id) {
+    public static Furniture getById(int id) {
         Furniture result = null;
         for (Furniture furniture : holder) {
             if (furniture.getId() == id) {

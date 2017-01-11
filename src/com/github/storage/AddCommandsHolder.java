@@ -33,12 +33,9 @@ public class AddCommandsHolder {
 		Command command = command2Action.get(inputName);
 		return command;
 	}
-	
+
 	public Map<String, Command> getAll() {
 		return command2Action;
 	}
-	
-	/*public void showMenu(){
-		Menu.showAddMenu();
-	}*/
+
 }

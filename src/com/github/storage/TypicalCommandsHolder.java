@@ -18,12 +18,12 @@ public class TypicalCommandsHolder {
 		command2Action.put("exit", exitCmd);
 	}
 
-	public Command get(String inputName) {
+	public  Command get(String inputName) {
 		Command command = command2Action.get(inputName);
 		return command;
 	}
 
-	public Map<String, Command> getAll() {
+	public  Map<String, Command> getAll() {
 		return command2Action;
 	}
 }

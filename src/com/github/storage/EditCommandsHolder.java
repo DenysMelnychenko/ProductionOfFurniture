@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.github.controller.*;
 import com.github.controller.editCommands.*;
-import com.github.views.Menu;
 
 public class EditCommandsHolder {
 	private static Map<String, Command> command2Action = new HashMap<String, Command>();
@@ -25,7 +24,7 @@ public class EditCommandsHolder {
 		command2Action.put("exit", exitCmd);
 	}
 
-	public Command get(String inputName) {
+	public  Command get(String inputName) {
 		Command command = command2Action.get(inputName);
 		return command;
 	}
@@ -34,8 +33,4 @@ public class EditCommandsHolder {
 		return command2Action;
 	}
 
-	public void showMenu(){
-		Menu.showEditMenu();
-	}
-	
 }
