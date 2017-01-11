@@ -1,20 +1,21 @@
-package com.github.controller.addCommand;
+package com.github.controller.addCommands;
 
-import com.github.controller.Input;
 import com.github.controller.Command;
+import com.github.controller.Input;
 import com.github.model.Chair;
 import com.github.model.Furniture;
 import com.github.storage.MemoryStorage;
 
-public class AddWardrobeCommand implements Command{
+public class AddChairCommand implements Command {
+
 	@Override
 	public void execute() {
 		Input input = new Input();
 
-		System.out.println("Add specification name. Example: My Wardrobe");
+		System.out.println("Add specification name. Example: My Chair");
 		String type = input.nextUserCommand();
 
-		System.out.println("Add Wardrobe material. Example: Wood");
+		System.out.println("Add Chair material. Example: Wood");
 		String material = input.nextUserCommand();
 
 		System.out.println("Add height of Legs. Example: 65");
@@ -35,4 +36,5 @@ public class AddWardrobeCommand implements Command{
 	public void execute(Input input) {
 
 	}
+
 }

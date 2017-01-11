@@ -42,4 +42,8 @@ public class Furniture {
 	public String toString() {
 		return String.format("%s", this.getId(), this.getTypeOfProduct(), this.getTypeOfMaterial());
 	}
+	
+	public String getFurnitureName(Furniture furniture) {
+		return furniture.getClass().getSimpleName() + "(" + getTypeOfMaterial() + ")";
+	}
 }

@@ -50,6 +50,12 @@ public class Door {
 	public void setTypeOfOpen(String typeOfOpen) {
 		this.typeOfOpen = typeOfOpen;
 	}
+
+	@Override
+	public String toString() {
+		return "Door (typeOfDoor = " + typeOfDoor + ", typeOfOpen = " + typeOfOpen +  ", height = " + height + ", width = " + width + ")";
+	}
+	
 	
 	
 }

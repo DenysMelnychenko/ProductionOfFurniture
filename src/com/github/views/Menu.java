@@ -13,7 +13,7 @@ public class Menu {
 
     public static void showAddMenu() {
         System.out.println("Chose added product");
-        System.out.println("|table| |chair| |return|");
+        System.out.println("|table| |chair| |wardrobe| |return|");
     }
 
     public static void showEditMenu() {

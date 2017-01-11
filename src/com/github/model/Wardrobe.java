@@ -1,5 +1,7 @@
 package com.github.model;
 
+import java.util.Arrays;
+
 public class Wardrobe extends Furniture {
 
 	private int height;
@@ -7,20 +9,19 @@ public class Wardrobe extends Furniture {
 	private int depth;
 	private int numberOfSections;
 	private boolean isDoor;
-	private Door door;
+	private Door[] doors;
 	private int numberOfDoors;
 
 	public Wardrobe(String productType, String productMaterial, int height, int width, int depth, int numberOfSections,
-			boolean isDoor,Door door, int numberOfDoors) {
+			boolean isDoor, Door[] doors, int numberOfDoors) {
 		super(productType, productMaterial);
 		this.height = height;
 		this.width = width;
 		this.depth = depth;
 		this.numberOfSections = numberOfSections;
 		this.isDoor = isDoor;
-		this.door = door;
+		this.doors = doors;
 		this.numberOfDoors = numberOfDoors;
-		
 	}
 
 	public int getHeight() {
@@ -63,12 +64,12 @@ public class Wardrobe extends Furniture {
 		this.isDoor = withDoor;
 	}
 
-	public Door getDoor() {
-		return door;
+	public Door[] getDoor() {
+		return doors;
 	}
 
-	public void setDoor(Door door) {
-		this.door = door;
+	public void setDoor(Door[] door) {
+		this.doors = door;
 	}
 
 	public int getNumberOfDoors() {
@@ -78,5 +79,14 @@ public class Wardrobe extends Furniture {
 	public void setNumberOfDoors(int numberOfDoors) {
 		this.numberOfDoors = numberOfDoors;
 	}
+
+	@Override
+	public String toString() {
+		return super.getTypeOfProduct() + " - material = " + super.getTypeOfMaterial() + ", h= " + height + ", w= " + width + ", d= " + depth +  ", " + "\n" + "numberOfSections="
+				+ numberOfSections + ", isDoor=" + isDoor + ", numberOfDoors=" + numberOfDoors + ", doors = " + Arrays.toString(doors) + "]";
+	}
+	
+	
+	
 
 }
