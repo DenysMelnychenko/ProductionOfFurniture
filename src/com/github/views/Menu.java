@@ -17,8 +17,8 @@ public class Menu {
     }
 
     public static void showEditMenu() {
-        System.out.println("|1 - change type of product|");
-        System.out.println("|2 - change material of product|");
+        System.out.println("|name - change type of product|");
+        System.out.println("|material - change material of product|");
         /*System.out.println("|4 - change id of product|");*/       // Нужно ли иметь возможность изменять id?
         System.out.println("|3 - return|");
     }
